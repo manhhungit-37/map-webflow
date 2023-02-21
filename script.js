@@ -96,7 +96,7 @@ const mapImageString = `
       }
     })
   
-    path.addEventListener("mouseout", () => {
+    path.addEventListener("mouseleave", () => {
       path.style.fill = "#000";
       
       addressNodeList.forEach(address => {
