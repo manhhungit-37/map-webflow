@@ -82,7 +82,7 @@ const mapImageString = `
       place = path.id;
       if (place) {
         addressNodeList.forEach(address => {
-          const dataAddress = li.getAttribute("data-address");
+          const dataAddress = address.getAttribute("data-address");
           if (dataAddress === place) {
             address.style.display = "block";
           }
@@ -100,7 +100,7 @@ const mapImageString = `
       path.style.fill = "#000";
       
       addressNodeList.forEach(address => {
-        const dataAddress = li.getAttribute("data-address");
+        const dataAddress = address.getAttribute("data-address");
         if (dataAddress === place) {
           address.style.display = "none";
         }
