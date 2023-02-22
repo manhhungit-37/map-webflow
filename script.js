@@ -1,5 +1,4 @@
 const events = document.querySelectorAll(".map-wrapper");
-let place = "";
 
 const mapImageString = `
 <div>
@@ -81,52 +80,5 @@ const mapImageString = `
 
 events.forEach(event => {
   event.insertAdjacentHTML('afterbegin', mapImageString);
-  const paths = event.querySelectorAll("g");
-  const liList = event.querySelectorAll("li");
-  const addressNodeList = event.querySelectorAll(".address");
-
-  paths.forEach(path => {
-    path.addEventListener("mouseover", () => {
-      path.style.fill = "red";
-      place = path.id;
-      addressNodeList.forEach(address => {
-        address.style.display = "none";
-      })
-      
-      if (place) {
-        addressNodeList.forEach(address => {
-          const dataAddress = address.getAttribute("data-address");
-          if (dataAddress === place) {
-            address.style.display = "block";
-          }
-        })
-        liList.forEach(li => {
-          const dataState = li.getAttribute("data-state");
-          if (dataState === place) {
-            li.style.color = "red";
-          }
-        })
-      }
-    })
-
-    path.addEventListener("mouseleave", (e) => {
-      path.style.fill = "#000";
-      if (e.relatedTarget.className === 'address-wrapper') return;
-
-      addressNodeList.forEach(address => {
-        const dataAddress = address.getAttribute("data-address");
-        if (dataAddress === place) {
-          address.style.display = "none";
-        }
-      })
-
-      liList.forEach(li => {
-        const dataState = li.getAttribute("data-state");
-        if (dataState === place) {
-          li.style.color = "#141414";
-        }
-      })
-    })
-  });
 })
 
