@@ -1,5 +1,4 @@
 const events = document.querySelectorAll(".map-wrapper");
-let place = "";
 
 const mapImageString = `
 <svg xmlns="http://www.w3.org/2000/svg" width="1159" height="857" viewBox="0 0 1159 857" fill="none">
